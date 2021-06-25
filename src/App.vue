@@ -1,28 +1,19 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <top-bar></top-bar>
+    <scale-button>Click!</scale-button>
+    <scale-footer></scale-footer>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Vue from 'vue';
+  import { ScaleButton } from '@telekom/scale-components-vue';
+  import TopBar  from './components/TopBar/TopBar.vue';
+  import ScaleFooter  from './components/Footer/Footer.vue';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  export default Vue.extend({
+    name: 'app',
+    components: { ScaleFooter, ScaleButton, TopBar },
+  });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
